@@ -50,6 +50,31 @@
             animation: fadeInDown 1.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
         }
 
+        /* Animated Name Span */
+        .animated-name {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff0000 0%, #ffffff 25%, #ff0000 50%, #ffffff 75%, #ff0000 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: colorFlow 3s ease-in-out infinite;
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+            letter-spacing: -1px;
+        }
+
+        @keyframes colorFlow {
+            0% {
+                background-position: -200% 0;
+            }
+            50% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
         /* Scroll-triggered Animated Content Sections */
         .content-section {
             width: 100%;
@@ -204,13 +229,13 @@
 <body>
 
     <div class="intro-section">
-        <h1 class="main-title">Happy Birthday<br>Mannahil</h1>
+        <h1 class="main-title">Happy Birthday<br><span class="animated-name">MANAHIL</span></h1>
         <div class="scroll-hint">Scroll down to see your surprise ↓</div>
     </div>
 
     <div class="content-section" id="paragraph-section">
         <p class="birthday-paragraph">
-            On this beautiful day, I want to wish you the absolute best. You bring so much light, happiness, and incredible energy into the world just by being yourself. Thank you for all the beautiful moments, the shared laughs, and the unforgettable memories. May this upcoming year bring you endless joy, success, and everything your heart truly desires. You deserve the entire world!
+            Happy Birthday Manahil. I want to meet you but I can't, par meri duaein hamesha aapke saath hain. Always live your life with happiness and all the success in the world. Door reh kar bhi, today is a very special day for me because it is your day. Wishing you an amazing and beautiful year ahead. Happy 14th Birthday!
         </p>
     </div>
 
@@ -219,13 +244,13 @@
         <div class="gallery-container">
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAAH0CAYAAAD9wA74AAAAAXNSR0IArs4c6QAAAHhlWElmTU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAITAAMAAAABAAEAAIdpAAQAAAABAAAATgAAAAAAAACQAAAAAQAAAJAAAAABAAeQAAAHAAAABDAyMjeqgAEAAQAAA4gAAAGgAAAAnv2R60QAAQAnSURBVHic7L1prF1Xfif77H3W3vM9d8gbyYwSpSgNsiTbli3bcewkJ92p7gY6GvSg+6MhGvS36I8GBH3pByNId7cbBvSjYfSjIUB/6NAd6O50AkiO7ThxbNmWJVmUSYkiiSJFiswbybnze/Zg78e698mZIsXyEEmR70MciTz3nD3W2mv91/rX/69/H6W1Zs+ePXv2XF1YV/sE9uzZs2fP1cSeAezZs2fPNSX2DGDPhYvWev93Hw98BwP76U9/ej/b9uxZsWcAe64O9EVPf89/7p//V2bXo5+rDnsGsGdFfNWXbTfHq8H+Aaxp6DqF/vDhw77T7rkqsWcAe64p0pS87D+T/9w2NfN39+r延E=" alt="First Picture">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAAH0CAYAAAD9wA74AAAAAXNSR0IArs4c6QAAAHhlWElmTU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAITAAMAAAABAAEA[...]
                 </div>
             </div>
 
             <div class="card">
                 <div class="image-wrapper">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAAH0CAYAAAD9wA74AAAAAXNSR0IArs4c6QAAAHhlWElmTU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAITAAMAAAABAAEAAIdpAAQAAAABAAAATgAAAAAAAACQAAAAAQAAAJAAAAABAAeQAAAHAAAABDAyMjeqgAEAAQAAA4gAAAGgAAAAnv2R60QAAQAnSURBVHic7L1ajB1Xfif67X3vPXeXbyUzkixKFEmRFGWRZMeO7SSX7SInHQ36UQwN+qMhQIcGfepHBgT6og8NkKHTj91ODXQn7eTIkmVFliiJEkWKZEkWyTXLZJHLvffeXWeXb3X64eYUKZWHSCr7ZInPA8hzz9lrr7X+9f9b/7X+9f+V1lrzxRdfvHjxlfDZZ9B7Lny+yID3fPl88f3XgO/A4D969OhefuvbVw3+DGDPlceXffmOf74Bvvp5Ldf9Ncf8w997v8e6f1f3n63bYf/pX7O9u6+39Sdf6mN9e8u++7X8/ff/X9feP/8V6O8gA/izwMoA/83w/vP3w27+u/3Z1c/PZ/p+w6V3/+N3fEbfP6936T3L8LnfD3wHuvf/Zp/+96Y77/W79t7t29P739+0fX8tO/+/Xf7bM4DXHnsG8HcD+696L4D7b6zX3reG/vfb/x99v67pM/wT39M/yK/Zvr/Z3m+/Rve5wS90/6D695r3W3sP/5wB/N3B7gBvA+fbe96m3bdfu/Wav9d76e+Wvtd7+97f5vN2Tfe9r218F5eN/b3pPeXmdf7rV/tU+veU7p6h+0/v935H3X/6/fbe53qO7u+7b6f/eP7mBw0A/w7ofVw92DOArwDsy736Pffp+97S+7FdfT9f6/7e3b/u/bKevvXm/t7H7XvvfV/6g736/7btd/u+T/9f91zY696v2TfW+v6vGvvb6I/Tff17z38A7BnA/yrY/U/2vS17v0Zft977b3df6/Fp3/8W77/dffX2febrr9F3O69rv9v6v9F3/G3D/wLgH29fW+f7A7n6/jfsve32vWvVvtfS3eezWre0v76z9P7qfv+H6p6/Z/u6/vj/9vevofvPfRcAex/sOf8gA94D4J6rDnsG8HcDewP7/8Xet+297faZq98b9s3zbevvO//v/6/p19v0v/+3P9Gve++XgP8I2HshwP8L9L7mF2v/T1wAfg+u+W3/G977Ld7f8ffu3t/W/Zvt/enfe6/7z97w9//U+1Pvu5g9A/hDwf5gfgG8P5Bfe+9L9f170/t7XWfW73XfC7VvD66+Zq9P++q/X8993f77dfb8K/Xvff+/T7e0b//f+xofC7T2HPaH/UHYv4b9M369Wvt73v+D6Pvf3v7/tbtZ3/X/ffw9m//fe7f677v2fP55DfxX/9vhr0v7H8EbD/b9/v/2b6b+XW97zb9v7P39G/36X8v9d+e6wq7w9izZ8+eKxt7BrBnz54rG3sGsGfPnitbe/8f7G0W3G4H4YMAAAAASUVORK5CYII=" alt="Second Picture">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAAH0CAYAAAD9wA74AAAAAXNSR0IArs4c6QAAAHhlWElmTU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAITAAMAAAABAAEA[...]
                 </div>
             </div>
         </div>
