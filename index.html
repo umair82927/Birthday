@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Manahil</title>
+    <style>
+        /* Professional Reset & Performance Optimization */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff3366;
+        }
+
+        /* Luxury Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #111111 0%, #000000 100%);
+            position: relative;
+            padding: 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, #000 80%),
+                        url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.015"/%3E%3C/svg%3E');
+            pointer-events: none;
+        }
+
+        .greetings {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .name {
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #ffffff, #ff3366, #ffffff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Message Box Styling */
+        .message-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            margin-bottom: 80px;
+            transition: border-color 0.3s ease;
+        }
+
+        .message-card:hover {
+            border-color: rgba(255, 51, 102, 0.3);
+        }
+
+        .message-title {
+            font-size: 1.5rem;
+            color: #ff3366;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .paragraph-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #cccccc;
+            font-weight: 300;
+        }
+
+        /* Smooth Premium Image Gallery */
+        .gallery-title {
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .photo-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #151515;
+            aspect-ratio: 4/5;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
+        }
+
+        .photo-wrapper:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 102, 0.4);
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .photo-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Subtle Audio Bar Indicator */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: #555555;
+            letter-spacing: 1px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .name { font-size: 3.5rem; }
+            .message-card { padding: 25px; }
+            .paragraph-text { font-size: 1.05rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="greetings">
+            <h1>Happy Birthday</h1>
+            <div class="name">Manahil</div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <div class="message-card">
+            <div class="message-title">For You</div>
+            <p class="paragraph-text">
+                Aapki zindagi mein aur zyada khushiyan aur kamyabi aayein. Happy Birthday! Thinking of you on your special day, may your year ahead be filled with joy, wonderful moments, and all the success you deserve.
+            </p>
+        </div>
+
+        <h2 class="gallery-title">Memories</h2>
+        <div class="gallery-grid">
+            
+            <div class="photo-wrapper">
+                <img src="photo1.jpg" alt="Manahil's Birthday Pic 1">
+            </div>
+
+            <div class="photo-wrapper">
+                <img src="photo2.jpg" alt="Manahil's Birthday Pic 2">
+            </div>
+
+            <div class="photo-wrapper">
+                <img src="photo3.jpg" alt="Manahil's Birthday Pic 3">
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        Designed with care for a special day.
+    </footer>
+
+</body>
+</html>
