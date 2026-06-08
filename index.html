@@ -3,242 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Manahil</title>
+    <title>Happy Birthday!</title>
     <style>
-        /* Professional Reset & Performance Optimization */
+        /* Modern Reset and Smooth Styling */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            -webkit-font-smoothing: antialiased;
         }
-
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            background-color: #0a0a0a;
-            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
             overflow-x: hidden;
+            padding-bottom: 60px;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #222;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff3366;
-        }
-
-        /* Luxury Hero Section */
-        .hero {
+        /* Full Screen Intro Section */
+        .intro-section {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #111111 0%, #000000 100%);
-            position: relative;
             padding: 20px;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, transparent 20%, #000 80%),
-                        url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.015"/%3E%3C/svg%3E');
-            pointer-events: none;
-        }
-
-        .greetings {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-
-        h1 {
+        /* Header Animation */
+        .main-title {
             font-size: 3.5rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
             color: #fff;
-            text-transform: uppercase;
-        }
-
-        .name {
-            font-size: 5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, #ffffff, #ff3366, #ffffff);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 4s linear infinite;
-        }
-
-        /* Content Sections */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
-
-        /* Message Box Styling */
-        .message-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            margin-bottom: 80px;
-            transition: border-color 0.3s ease;
-        }
-
-        .message-card:hover {
-            border-color: rgba(255, 51, 102, 0.3);
-        }
-
-        .message-title {
-            font-size: 1.5rem;
-            color: #ff3366;
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 800;
+            letter-spacing: -1px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInDown 1.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
         }
 
-        .paragraph-text {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: #cccccc;
-            font-weight: 300;
-        }
-
-        /* Smooth Premium Image Gallery */
-        .gallery-title {
+        /* Scroll-triggered Animated Content Sections */
+        .content-section {
+            width: 100%;
+            max-width: 800px;
+            padding: 60px 20px;
             text-align: center;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            font-weight: 400;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+        /* Class added by JavaScript on Scroll */
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .photo-wrapper {
-            position: relative;
-            border-radius: 12px;
+        .birthday-paragraph {
+            font-size: 1.3rem;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: #fff;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        /* Gallery Layout */
+        .gallery-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Card Dynamic Animation & Styles */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
             overflow: hidden;
-            background-color: #151515;
-            aspect-ratio: 4/5;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 340px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
         }
 
-        .photo-wrapper:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 51, 102, 0.4);
+        .image-wrapper {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 9 / 16;
+            background-color: #f0f0f0;
         }
 
-        .photo-wrapper img {
+        .card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            display: block;
+            transition: transform 0.6s ease;
         }
 
-        .photo-wrapper:hover img {
-            transform: scale(1.05);
+        .card:hover img {
+            transform: scale(1.06);
         }
 
-        /* Subtle Audio Bar Indicator */
-        .footer {
-            text-align: center;
-            padding: 40px 20px;
+        /* Countdown Timer Styling */
+        .countdown-container {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: inline-flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+        }
+
+        .time-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .time-label {
             font-size: 0.9rem;
-            color: #555555;
+            text-transform: uppercase;
+            color: #f0f0f0;
             letter-spacing: 1px;
+            margin-top: 5px;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
+        /* Keyframe Definitions */
+        @keyframes fadeInDown {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        @keyframes shine {
-            to {
-                background-position: 200% center;
-            }
+        /* Hint Arrow */
+        .scroll-hint {
+            margin-top: 40px;
+            color: #fff;
+            font-size: 1rem;
+            animation: bounce 2s infinite;
+            opacity: 0.8;
         }
 
-        /* Mobile Optimization */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .name { font-size: 3.5rem; }
-            .message-card { padding: 25px; }
-            .paragraph-text { font-size: 1.05rem; }
+            .main-title { font-size: 2.5rem; }
+            .section-title { font-size: 2.2rem; }
+            .birthday-paragraph { font-size: 1.1rem; }
+            .time-number { font-size: 2.2rem; }
+            .time-box { min-width: 60px; }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <div class="greetings">
-            <h1>Happy Birthday</h1>
-            <div class="name">Manahil</div>
-        </div>
-    </section>
+    <div class="intro-section">
+        <h1 class="main-title">Happy Birthday<br>Mannahil</h1>
+        <div class="scroll-hint">Scroll down to see your surprise ↓</div>
+    </div>
 
-    <div class="container">
+    <div class="content-section" id="paragraph-section">
+        <p class="birthday-paragraph">
+            On this beautiful day, I want to wish you the absolute best. You bring so much light, happiness, and incredible energy into the world just by being yourself. Thank you for all the beautiful moments, the shared laughs, and the unforgettable memories. May this upcoming year bring you endless joy, success, and everything your heart truly desires. You deserve the entire world!
+        </p>
+    </div>
 
-        <div class="message-card">
-            <div class="message-title">For You</div>
-            <p class="paragraph-text">
-                Aapki zindagi mein aur zyada khushiyan aur kamyabi aayein. Happy Birthday! Thinking of you on your special day, may your year ahead be filled with joy, wonderful moments, and all the success you deserve.
-            </p>
-        </div>
-
-        <h2 class="gallery-title">Memories</h2>
-        <div class="gallery-grid">
-            
-            <div class="photo-wrapper">
-                <img src="photo1.jpg" alt="Manahil's Birthday Pic 1">
+    <div class="content-section">
+        <h2 class="section-title">Memories</h2>
+        <div class="gallery-container">
+            <div class="card">
+                <div class="image-wrapper">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAAH0CAYAAAD9wA74AAAAAXNSR0IArs4c6QAAAHhlWElmTU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAITAAMAAAABAAEAAIdpAAQAAAABAAAATgAAAAAAAACQAAAAAQAAAJAAAAABAAeQAAAHAAAABDAyMjeqgAEAAQAAA4gAAAGgAAAAnv2R60QAAQAnSURBVHic7L1prF1Xfif77H3W3vM9d8gbyYwSpSgNsiTbli3bcewkJ92p7gY6GvSg+6MhGvS36I8GBH3pByNId7cbBvSjYfSjIUB/6NAd6O50AkiO7ThxbNmWJVmUSYkiiSJFiswbybnze/Zg78e698mZIsXyEEmR70MciTz3nD3W2mv91/rX/69/H6W1Zs+ePXv2XF1YV/sE9uzZs2fP1cSeAezZs2fPNSX2DGDPhYvWev93Hw98BwP76U9/ej/b9uxZsWcAe64O9EVPf89/7p//V2bXo5+rDnsGsGdFfNWXbTfHq8H+Aaxp6DqF/vDhw77T7rkqsWcAe64p0pS87D+T/9w2NfN39+r延E=" alt="First Picture">
+                </div>
             </div>
 
-            <div class="photo-wrapper">
-                <img src="photo2.jpg" alt="Manahil's Birthday Pic 2">
+            <div class="card">
+                <div class="image-wrapper">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUAAAAH0CAYAAAD9wA74AAAAAXNSR0IArs4c6QAAAHhlWElmTU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAAITAAMAAAABAAEAAIdpAAQAAAABAAAATgAAAAAAAACQAAAAAQAAAJAAAAABAAeQAAAHAAAABDAyMjeqgAEAAQAAA4gAAAGgAAAAnv2R60QAAQAnSURBVHic7L1ajB1Xfif67X3vPXeXbyUzkixKFEmRFGWRZMeO7SSX7SInHQ36UQwN+qMhQIcGfepHBgT6og8NkKHTj91ODXQn7eTIkmVFliiJEkWKZEkWyTXLZJHLvffeXWeXb3X64eYUKZWHSCr7ZInPA8hzz9lrr7X+9f9b/7X+9f+V1lrzxRdfvHjxlfDZZ9B7Lny+yID3fPl88f3XgO/A4D969OhefuvbVw3+DGDPlceXffmOf74Bvvp5Ldf9Ncf8w997v8e6f1f3n63bYf/pX7O9u6+39Sdf6mN9e8u++7X8/ff/X9feP/8V6O8gA/izwMoA/83w/vP3w27+u/3Z1c/PZ/p+w6V3/+N3fEbfP6936T3L8LnfD3wHuvf/Zp/+96Y77/W79t7t29P739+0fX8tO/+/Xf7bM4DXHnsG8HcD+696L4D7b6zX3reG/vfb/x99v67pM/wT39M/yK/Zvr/Z3m+/Rve5wS90/6D695r3W3sP/5wB/N3B7gBvA+fbe96m3bdfu/Wav9d76e+Wvtd7+97f5vN2Tfe9r218F5eN/b3pPeXmdf7rV/tU+veU7p6h+0/v935H3X/6/fbe53qO7u+7b6f/eP7mBw0A/w7ofVw92DOArwDsy736Pffp+97S+7FdfT9f6/7e3b/u/bKevvXm/t7H7XvvfV/6g736/7btd/u+T/9f91zY696v2TfW+v6vGvvb6I/Tff17z38A7BnA/yrY/U/2vS17v0Zft977b3df6/Fp3/8W77/dffX2febrr9F3O69rv9v6v9F3/G3D/wLgH29fW+f7A7n6/jfsve32vWvVvtfS3eezWre0v76z9P7qfv+H6p6/Z/u6/vj/9vevofvPfRcAex/sOf8gA94D4J6rDnsG8HcDewP7/8Xet+297faZq98b9s3zbevvO//v/6/p19v0v/+3P9Gve++XgP8I2HshwP8L9L7mF2v/T1wAfg+u+W3/G977Ld7f8ffu3t/W/Zvt/enfe6/7z97w9//U+1Pvu5g9A/hDwf5gfgG8P5Bfe+9L9f170/t7XWfW73XfC7VvD66+Zq9P++q/X8993f77dfb8K/Xvff+/T7e0b//f+xofC7T2HPaH/UHYv4b9M369Wvt73v+D6Pvf3v7/tbtZ3/X/ffw9m//fe7f677v2fP55DfxX/9vhr0v7H8EbD/b9/v/2b6b+XW97zb9v7P39G/36X8v9d+e6wq7w9izZ8+eKxt7BrBnz54rG3sGsGfPnitbe/8f7G0W3G4H4YMAAAAASUVORK5CYII=" alt="Second Picture">
+                </div>
             </div>
-
-            <div class="photo-wrapper">
-                <img src="photo3.jpg" alt="Manahil's Birthday Pic 3">
-            </div>
-
         </div>
     </div>
 
-    <footer class="footer">
-        Designed with care for a special day.
-    </footer>
+    <div class="content-section">
+        <h2 class="section-title">Countdown to June 13th (12 AM)</h2>
+        <div class="countdown-container">
+            <div class="time-box">
+                <span class="time-number" id="days">00</span>
+                <span class="time-label">Days</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="hours">00</span>
+                <span class="time-label">Hours</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="minutes">00</span>
+                <span class="time-label">Mins</span>
+            </div>
+            <div class="time-box">
+                <span class="time-number" id="seconds">00</span>
+                <span class="time-label">Secs</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. SCROLL REVEAL LOGIC ---
+        const sections = document.querySelectorAll('.content-section');
+        
+        function revealSections() {
+            const triggerBottom = window.innerHeight * 0.85;
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('reveal');
+                } else {
+                    section.classList.remove('reveal');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealSections);
+        // Run once on load to show elements already on screen
+        revealSections();
+
+
+        // --- 2. LIVE COUNTDOWN TIMER LOGIC ---
+        // Set target to June 13, 2026 00:00:00
+        const targetDate = new Date('June 13, 2026 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('days').innerText = "00";
+                document.getElementById('hours').innerText = "00";
+                document.getElementById('minutes').innerText = "00";
+                document.getElementById('seconds').innerText = "00";
+                clearInterval(timerInterval);
+                return;
+            }
+
+            // Time calculations
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+            // Add leading zeros if numbers are under 10
+            document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+            document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+            document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+            document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+        }
+
+        // Run countdown instantly, then refresh every 1 second
+        updateCountdown();
+        const timerInterval = setInterval(updateCountdown, 1000);
+    </script>
 
 </body>
 </html>
